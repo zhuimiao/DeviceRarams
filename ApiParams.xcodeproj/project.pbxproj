@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0A0723771CAE705D00DD228F /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0723761CAE705D00DD228F /* UIDevice+Hardware.m */; };
+		0A07237D1CAE82C400DD228F /* SvUDIDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A07237C1CAE82C400DD228F /* SvUDIDTools.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0A07237F1CAE877F00DD228F /* KeychainAccessGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A07237E1CAE877F00DD228F /* KeychainAccessGroups.plist */; };
+		0A0723851CB3795F00DD228F /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0723841CB3795F00DD228F /* NSString+Hash.m */; };
 		0ADE54951CAE64D0005EF7F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE54941CAE64D0005EF7F6 /* main.m */; };
 		0ADE54981CAE64D0005EF7F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE54971CAE64D0005EF7F6 /* AppDelegate.m */; };
 		0ADE549B1CAE64D0005EF7F6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE549A1CAE64D0005EF7F6 /* ViewController.m */; };
@@ -39,6 +42,11 @@
 /* Begin PBXFileReference section */
 		0A0723751CAE705D00DD228F /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
 		0A0723761CAE705D00DD228F /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
+		0A07237B1CAE82C400DD228F /* SvUDIDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvUDIDTools.h; sourceTree = "<group>"; };
+		0A07237C1CAE82C400DD228F /* SvUDIDTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvUDIDTools.m; sourceTree = "<group>"; };
+		0A07237E1CAE877F00DD228F /* KeychainAccessGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeychainAccessGroups.plist; sourceTree = "<group>"; };
+		0A0723831CB3795F00DD228F /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		0A0723841CB3795F00DD228F /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		0ADE54901CAE64D0005EF7F6 /* ApiParams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiParams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADE54941CAE64D0005EF7F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0ADE54961CAE64D0005EF7F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,10 +119,14 @@
 				0ADE54971CAE64D0005EF7F6 /* AppDelegate.m */,
 				0ADE54C61CAE677A005EF7F6 /* ParamsTool.h */,
 				0ADE54C71CAE677A005EF7F6 /* ParamsTool.m */,
+				0A0723831CB3795F00DD228F /* NSString+Hash.h */,
+				0A0723841CB3795F00DD228F /* NSString+Hash.m */,
 				0ADE54991CAE64D0005EF7F6 /* ViewController.h */,
 				0ADE549A1CAE64D0005EF7F6 /* ViewController.m */,
 				0A0723751CAE705D00DD228F /* UIDevice+Hardware.h */,
 				0A0723761CAE705D00DD228F /* UIDevice+Hardware.m */,
+				0A07237B1CAE82C400DD228F /* SvUDIDTools.h */,
+				0A07237C1CAE82C400DD228F /* SvUDIDTools.m */,
 				0ADE549C1CAE64D0005EF7F6 /* Main.storyboard */,
 				0ADE549F1CAE64D0005EF7F6 /* Assets.xcassets */,
 				0ADE54A11CAE64D0005EF7F6 /* LaunchScreen.storyboard */,
@@ -128,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				0ADE54941CAE64D0005EF7F6 /* main.m */,
+				0A07237E1CAE877F00DD228F /* KeychainAccessGroups.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -255,6 +268,7 @@
 			files = (
 				0ADE54A31CAE64D0005EF7F6 /* LaunchScreen.storyboard in Resources */,
 				0ADE54A01CAE64D0005EF7F6 /* Assets.xcassets in Resources */,
+				0A07237F1CAE877F00DD228F /* KeychainAccessGroups.plist in Resources */,
 				0ADE549E1CAE64D0005EF7F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A0723851CB3795F00DD228F /* NSString+Hash.m in Sources */,
+				0A07237D1CAE82C400DD228F /* SvUDIDTools.m in Sources */,
 				0A0723771CAE705D00DD228F /* UIDevice+Hardware.m in Sources */,
 				0ADE549B1CAE64D0005EF7F6 /* ViewController.m in Sources */,
 				0ADE54C81CAE677A005EF7F6 /* ParamsTool.m in Sources */,

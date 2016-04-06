@@ -11,6 +11,8 @@
 #include <CoreTelephony/CoreTelephonyDefines.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#import "SvUDIDTools.h"
+#import "NSString+Hash.h"
 
 @implementation ParamsTool
 
@@ -122,8 +124,45 @@
     return type;
 }
 
-+ (NSString *)udid
++ (NSString *)idfa
 {
-    return nil;
+    return [SvUDIDTools IDFA];
 }
+
++ (NSString *)idfv
+{
+    return [SvUDIDTools IDFV];
+}
+
++ (NSString *)getCommonParamsString
+{
+    NSDictionary * params = @{
+                              @"carriername":[self carriername],
+                              @"client_v":[self client_v],
+                              @"devicename":[self devicename],
+                              @"macid":[self macid],
+                              @"os":[self os],
+                              @"osversion":[self osversion],
+                              @"screenwidth":[self screenwidth],
+                              @"screenheight":[self screenheight],
+                              @"sourceId":[self sourceId],
+                              @"timereq":[self timereq],
+                              @"wantype":[self wantype]
+                              };
+  NSData *data = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
+    return [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+}
+
++ (NSDictionary *)getDuoMengParams
+{
+    NSDictionary *params = @{
+                             @"idfa":[self idfa],
+                             @"idfa_md5":[[self idfa] md5String],
+                             @"idfv":[self idfv],
+                             @"idfv_md5":[[self idfv] md5String],
+                             @"params":[self getCommonParamsString]
+                             };
+    return params;
+}
+
 @end

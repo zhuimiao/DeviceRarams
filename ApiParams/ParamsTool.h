@@ -91,11 +91,27 @@
 + (NSString *)wantype;
 
 /**
- *  用户设备唯一标识符
- *
+ *  用户设备广告标识符
  *  @return xxxxxxx
  */
-+ (NSString *)udid;
++ (NSString *)idfa;
 
+/**
+ *  用户设备供应商标识符
+ *
+ */
++ (NSString *)idfv;
+
+/**
+ *  获取公共参数字符串
+ *
+ */
++ (NSString *)getCommonParamsString;
+
+/**
+ *  获取多盟参数字典
+ *
+ */
++ (NSDictionary *)getDuoMengParams;
 
 @end
